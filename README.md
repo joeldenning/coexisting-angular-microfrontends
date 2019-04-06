@@ -24,3 +24,6 @@ npx serve -s
 ```
 
 Now open your browser to the url it says to open (usually http://localhost:5000).
+
+## More documentation
+Go to https://github.com/CanopyTax/single-spa-angular to learn how all of this works.
