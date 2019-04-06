@@ -8,17 +8,17 @@ additional microfrontends.
 ## Instructions
 Ignore how tedious the developer experience is right now -- it will be fixed with https://github.com/CanopyTax/single-spa-angular/issues/41
 
-After cloning the repo, uun the following commands in a terminal from inside of the cloned project
+After cloning the repo, run the following commands in a terminal from inside of the cloned project
 ```sh
 cd navbar
 npm install
-npm run build
+ng build
 cd ../app1
 npm install
-npm run build
+ng build
 cd ../app2
 npm install
-npm run build
+ng build
 cd ..
 npx serve -s 
 ```
