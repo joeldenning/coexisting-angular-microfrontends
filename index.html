@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Angular app</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="/" />
+</head>
+<body>
+  <script src="https://unpkg.com/zone.js"></script>
+  <script src="https://unpkg.com/single-spa/lib/umd/single-spa.min.js"></script>
+  <script src="/navbar/dist/navbar/main.js"></script>
+  <script src="/app1/dist/app1/main.js"></script>
+  <script src="/app2/dist/app2/main.js"></script>
+  <script>
+    singleSpa.registerApplication('navbar', window.navbar.default, location => true);
+    singleSpa.registerApplication('app1', window.app1.default, location => location.pathname.startsWith('/app1'));
+    singleSpa.registerApplication('app2', window.app2.default, location => location.pathname.startsWith('/app2'));
+    singleSpa.start();
+  </script>
+</body>
+</html>
