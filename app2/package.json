@@ -23,7 +23,7 @@
     "@angular/router": "~7.2.0",
     "core-js": "^2.5.4",
     "rxjs": "~6.3.3",
-    "single-spa-angular": "^3.0.0-beta.12",
+    "single-spa-angular": "^3.0.0-beta.14",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
   },

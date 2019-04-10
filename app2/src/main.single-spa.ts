@@ -1,5 +1,5 @@
 import 'core-js/es7/reflect';
-import { enableProdMode, ApplicationRef, NgZone } from '@angular/core';
+import { enableProdMode, NgZone } from '@angular/core';
 
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { Router } from '@angular/router';
@@ -15,6 +15,5 @@ export default singleSpaAngular({
   bootstrapFunction: () => platformBrowserDynamic().bootstrapModule(AppModule),
   template: '<app2-root />',
   Router,
-  ApplicationRef,
   NgZone: NgZone,
 });
