@@ -23,10 +23,8 @@ npm install
 ng build
 
 cd ..
-npx serve -s 
+npx light-server -s . --historyindex '/index.html' -o
 ```
-
-Now open your browser to the url it says to open (usually http://localhost:5000).
 
 If you want set up a watcher so that you don't have to wait for an entire rebuild everytime you make a code change, run `ng build --watch`
 in whichever application(s) that you are working on.
