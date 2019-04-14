@@ -4,18 +4,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { APP_BASE_HREF } from '@angular/common';
+import { EmptyRouteComponent } from './empty-route/empty-route.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EmptyRouteComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
   ],
-  providers: [{provide: APP_BASE_HREF, useValue: '/app1'}],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
