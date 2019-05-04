@@ -2,12 +2,11 @@
   "name": "root-html-file",
   "description": "The single-spa root config for coexisting-angular-microfrontends",
   "main": "index.js",
-  "scripts": {},
-  "author": "Joel Denning",
-  "license": "MIT",
   "scripts": {
     "start": "light-server -s . --historyindex '/index.html' -p 4200"
   },
+  "author": "Joel Denning",
+  "license": "MIT",
   "devDependencies": {
     "light-server": "^2.6.2"
   }
