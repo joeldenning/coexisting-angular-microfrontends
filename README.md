@@ -24,12 +24,11 @@ npm i
 ng serve --port 4201 --publicHost http://localhost:4201 --disable-host-check
 ```
 
-Now go to http://coexisting-angular-microfrontends.surge.sh in a browser. In the browser console, run the following commands:
+Now go to http://coexisting-angular-microfrontends.surge.sh in a browser. In the browser console, run the following command:
 
 ```js
 // See https://github.com/joeldenning/import-map-overrides#readme for more details on how this works
 importMapOverrides.addOverride('app1', 'http://localhost:4201/main.js');
-importMapOverrides.getOverrideMap().imports // This is just so you can check that the previous command worked.
 ```
 
 Now reload the page, and you will have overridden app1 to load from your localhost. As you modify the code locally, it will
