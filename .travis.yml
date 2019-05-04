@@ -9,14 +9,14 @@ language: node_js
 node_js:
   - "node"
 script:
-  - cd navbar && npm i && ng build --prod --output-hashing none
-  - cd ../app1 && npm i && ng build --prod --output-hashing none
-  - cd ../app2 && npm i && ng build --prod --output-hashing none
+  - cd navbar && npm ci && ng build --prod --output-hashing none
+  - cd ../app1 && npm ci && ng build --prod --output-hashing none
+  - cd ../app2 && npm ci && ng build --prod --output-hashing none
   - cd .. && mkdir static && cp -a navbar/dist app1/dist app2/dist static
   - cp root-html-file/index.html static
-  - sed -i .bak 's/http:\/\/localhost:4201/\/dist\/app1/g' static/index.html
-  - sed -i .bak 's/http:\/\/localhost:4202/\/dist\/app2/g' static/index.html
-  - sed -i .bak 's/http:\/\/localhost:4203/\/dist\/app3/g' static/index.html
+  - sed -i '' 's/http:\/\/localhost:4201/\/dist\/app1/g' static/index.html
+  - sed -i '' 's/http:\/\/localhost:4202/\/dist\/app2/g' static/index.html
+  - sed -i '' 's/http:\/\/localhost:4203/\/dist\/app3/g' static/index.html
   - cp static/index.html static/200.html
 deploy:
   provider: surge
