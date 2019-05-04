@@ -1,3 +1,4 @@
+import './set-public-path'
 import 'core-js/es7/reflect';
 import { enableProdMode, NgZone } from '@angular/core';
 
@@ -11,9 +12,13 @@ if (environment.production) {
   enableProdMode();
 }
 
-export default singleSpaAngular({
+const lifecycles = singleSpaAngular({
   bootstrapFunction: () => platformBrowserDynamic().bootstrapModule(AppModule),
   template: '<navbar-root />',
   Router,
   NgZone: NgZone,
 });
+
+export const bootstrap = lifecycles.bootstrap;
+export const mount = lifecycles.mount;
+export const unmount = lifecycles.unmount;

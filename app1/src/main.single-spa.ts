@@ -12,10 +12,14 @@ if (environment.production) {
   enableProdMode();
 }
 
-export default singleSpaAngular({
+export const lifecycles = singleSpaAngular({
   bootstrapFunction: () => platformBrowserDynamic().bootstrapModule(AppModule),
   template: '<app1-root />',
   Router,
   NgZone: NgZone,
   AnimationEngine: AnimationEngine, 
 });
+
+export const bootstrap = lifecycles.bootstrap;
+export const mount = lifecycles.mount;
+export const unmount = lifecycles.unmount;
