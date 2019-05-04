@@ -36,14 +36,14 @@ npm start
 # Second terminal tab
 cd app1
 npm install
-ng serve --port 4201 --publicHost http://localhost:4200
+ng serve --port 4201 --publicHost http://localhost:4201
 ```
 
 ```sh
 # Third terminal tab
 cd app2
 npm install
-ng serve --port 4202 --publicHost http://localhost:4200
+ng serve --port 4202 --publicHost http://localhost:4202
 ```
 
 ```sh
