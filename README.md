@@ -47,6 +47,7 @@ ng serve --port 4202 --publicHost http://localhost:4200
 ```
 
 ```sh
+# Fourth terminal tab
 cd navbar
 npm install
 ng serve --port 4203 --publicHost http://localhost:4203
