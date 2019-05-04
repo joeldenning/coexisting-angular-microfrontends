@@ -15,7 +15,7 @@ charge of different microfrontends.
 ## Local development -- one app at a time
 With single-spa, it is preferred to run `ng serve` in only one single-spa application at a time, while using a deployed
 version of the other applications. This makes for an awesome developer experience where you can boot up just one
-microfrontend at a time, not even having to clone or boot up all of the microfrontends.
+microfrontend at a time, not even having to clone, npm install, or boot up all of the other ones.
 
 To try this out, clone the repo and run the following commands:
 ```sh
@@ -48,21 +48,21 @@ npm start
 # Second terminal tab
 cd app1
 npm install
-ng serve --port 4201 --publicHost http://localhost:4201
+ng serve --port 4201 --publicHost http://localhost:4201 --disable-host-check
 ```
 
 ```sh
 # Third terminal tab
 cd app2
 npm install
-ng serve --port 4202 --publicHost http://localhost:4202
+ng serve --port 4202 --publicHost http://localhost:4202 --disable-host-check
 ```
 
 ```sh
 # Fourth terminal tab
 cd navbar
 npm install
-ng serve --port 4203 --publicHost http://localhost:4203
+ng serve --port 4203 --publicHost http://localhost:4203 --disable-host-check
 ```
 
 Now go to http://localhost:4200 in a browser. Note that you can change any of the ports for the projects by modifying the Import Map inside of
