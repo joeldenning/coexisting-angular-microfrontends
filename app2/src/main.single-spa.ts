@@ -1,3 +1,4 @@
+import './set-public-path'
 import 'core-js/es7/reflect';
 import { enableProdMode, NgZone } from '@angular/core';
 
