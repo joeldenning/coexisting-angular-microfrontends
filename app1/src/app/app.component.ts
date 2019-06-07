@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app1';
+  // @ts-ignore
+  assetsBase = __webpack_public_path__;
 }
