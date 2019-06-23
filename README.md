@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/joeldenning/coexisting-angular-microfrontends.svg?branch=master)](https://travis-ci.org/joeldenning/coexisting-angular-microfrontends)
+
 # Coexisting Angular Microfrontends
 Demo: http://coexisting-angular-microfrontends.surge.sh
 
