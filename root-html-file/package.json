@@ -8,7 +8,7 @@
   "author": "Joel Denning",
   "license": "MIT",
   "devDependencies": {
-    "serve": "^10.1.1"
+    "serve": "^11.0.2"
   },
   "dependencies": {}
 }
