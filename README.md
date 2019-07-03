@@ -23,7 +23,7 @@ To try this out, clone the repo and run the following commands:
 ```sh
 cd app1
 npm i
-ng serve --port 4201 --publicHost http://localhost:4201 --disable-host-check
+npm start
 ```
 
 Now go to http://coexisting-angular-microfrontends.surge.sh in a browser. In the browser console, run the following command:
@@ -49,21 +49,21 @@ npm start
 # Second terminal tab
 cd app1
 npm install
-ng serve --port 4201 --publicHost http://localhost:4201 --disable-host-check
+npm start
 ```
 
 ```sh
 # Third terminal tab
 cd app2
 npm install
-ng serve --port 4202 --publicHost http://localhost:4202 --disable-host-check
+npm start
 ```
 
 ```sh
 # Fourth terminal tab
 cd navbar
 npm install
-ng serve --port 4203 --publicHost http://localhost:4203 --disable-host-check
+npm start
 ```
 
 Now go to http://localhost:4200 in a browser. Note that you can change any of the ports for the projects by modifying the Import Map inside of
