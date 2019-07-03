@@ -26,15 +26,8 @@ npm i
 npm start
 ```
 
-Now go to http://coexisting-angular-microfrontends.surge.sh in a browser. In the browser console, run the following command:
-
-```js
-// See https://github.com/joeldenning/import-map-overrides#readme for more details on how this works
-importMapOverrides.addOverride('app1', 'http://localhost:4201/main.js');
-```
-
-Now reload the page, and you will have overridden app1 to load from your localhost. As you modify the code locally, it will
-reload the page on coexisting-angular-microfrontends.surge.sh.
+Now go to http://coexisting-angular-microfrontends.surge.sh in a browser. Click on the yellowish rectangle at the bottom right. Then click on `app1`. Change the module url to http://localhost:4201/main.js. Then apply the override and reload the page. This will have change app1 to load from your localhost instead of from surge.sh. As you modify the code locally, it will
+reload the page on coexisting-angular-microfrontends.surge.sh. See https://github.com/joeldenning/import-map-overrides for more info on this.
 
 ## Local development -- all at once
 It is preferred to only run one app at a time. But if you need to run them all locally, you can do so with the following instructions
