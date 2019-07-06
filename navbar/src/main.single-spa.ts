@@ -19,7 +19,7 @@ const lifecycles = singleSpaAngular({
   },
   template: '<navbar-root />',
   Router,
-  NgZone: NgZone,
+  NgZone,
 });
 
 export const bootstrap = lifecycles.bootstrap;

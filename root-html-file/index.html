@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta http-equiv="Content-Security-Policy" content="default-src *  data: blob: 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; frame-src *; style-src * data: blob: 'unsafe-inline'; font-src * data: blob: 'unsafe-inline';">
     <meta charset="utf-8">
@@ -32,7 +32,7 @@
           'navbar',
           () => System.import('navbar'),
           location => true
-        )
+        );
 
         singleSpa.registerApplication(
           'app1',
@@ -44,7 +44,7 @@
           'app2',
           () => System.import('app2'),
           location => location.pathname.startsWith('/app2')
-        )
+        );
 
         singleSpa.start();
       })
