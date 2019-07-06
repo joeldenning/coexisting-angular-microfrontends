@@ -1,15 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-empty-route',
-  templateUrl: './empty-route.component.html',
-  styleUrls: ['./empty-route.component.css']
+  selector: 'app2-empty-route',
+  template: '',
 })
-export class EmptyRouteComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class EmptyRouteComponent {
 }
