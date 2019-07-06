@@ -3,19 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { APP_BASE_HREF } from '@angular/common';
+import { EmptyRouteComponent } from './empty-route/empty-route.component';
+import { PrimaryNavComponent } from './primary-nav/primary-nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    EmptyRouteComponent,
+    PrimaryNavComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [{provide: APP_BASE_HREF, useValue: '/'}],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
