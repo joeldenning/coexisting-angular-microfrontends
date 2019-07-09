@@ -16,7 +16,7 @@ script:
   - cp root-html-file/index.html static
   - sed -i 's/http:\/\/localhost:4201\/main/\/dist\/app1\/main-es2015/g' static/index.html
   - sed -i 's/http:\/\/localhost:4202\/main/\/dist\/app2\/main-es2015/g' static/index.html
-  - sed -i 's/http:\/\/localhost:4203\/main/\/dist\/navbar\/main-es2015/g' static/index.html
+  - sed -i 's/http:\/\/localhost:4300\/main/\/dist\/navbar\/main-es2015/g' static/index.html
   - cp static/index.html static/200.html
 deploy:
   provider: surge
