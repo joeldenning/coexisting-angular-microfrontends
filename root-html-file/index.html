@@ -18,6 +18,8 @@
       }
     </script>
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/single-spa/4.3.5/system/single-spa.min.js" as="script" crossorigin="anonymous" />
+    
+    <script src='https://unpkg.com/core-js-bundle@3.1.4/index.js'></script>
     <script src="https://unpkg.com/zone.js"></script>
     <script src="https://unpkg.com/import-map-overrides@1.6.0/dist/import-map-overrides.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/4.0.0/system.min.js"></script>
@@ -30,20 +32,32 @@
       System.import('single-spa').then(function (singleSpa) {
         singleSpa.registerApplication(
           'navbar',
-          () => System.import('navbar'),
-          location => true
+          function () {
+            return System.import('navbar');
+          },
+          function (location) {
+            return true;
+          }
         )
 
         singleSpa.registerApplication(
           'app1',
-          () => System.import('app1'),
-          location => location.pathname.startsWith('/app1')
+          function () {
+            return System.import('app1');
+          },
+          function (location) {
+            return location.pathname.startsWith('/app1');
+          }
         );
 
         singleSpa.registerApplication(
           'app2',
-          () => System.import('app2'),
-          location => location.pathname.startsWith('/app2')
+          function () {
+            return System.import('app2');
+          },
+          function (location) {
+            return location.pathname.startsWith('/app2');
+          }
         )
 
         singleSpa.start();
