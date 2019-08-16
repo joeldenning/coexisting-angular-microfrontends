@@ -10,6 +10,26 @@
       "sourceRoot": "src",
       "prefix": "app1",
       "architect": {
+        "dev": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/icw",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
+            "scripts": [
+            ]
+          }
+        },
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
@@ -59,14 +79,9 @@
           }
         },
         "serve": {
-          "builder": "@angular-builders/custom-webpack:dev-server",
+          "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "app1:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "app1:build:production"
-            }
+            "browserTarget": "app1:dev"
           }
         },
         "extract-i18n": {
