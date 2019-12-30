@@ -30,6 +30,8 @@ Now go to http://coexisting-angular-microfrontends.surge.sh in a browser. Click 
 reload the page on coexisting-angular-microfrontends.surge.sh. See https://github.com/joeldenning/import-map-overrides for more info on this.
 
 ## Local development -- all at once
+[Tutorial video]([Tutorial video](https://www.youtube.com/watch?v=vjjcuIxqIzY&list=PLLUD8RtHvsAOhtHnyGx57EYXoaNsxGrTU&index=4)
+
 It is preferred to only run one app at a time. But if you need to run them all locally, you can do so with the following instructions
 
 ```sh
