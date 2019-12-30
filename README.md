@@ -15,6 +15,8 @@ angular application**. The root-html-file project should also be in its own repo
 charge of different microfrontends.
 
 ## Local development -- one app at a time
+[Tutorial video](https://www.youtube.com/watch?v=vjjcuIxqIzY&list=PLLUD8RtHvsAOhtHnyGx57EYXoaNsxGrTU&index=4)
+
 With single-spa, it is preferred to run `ng serve` in only one single-spa application at a time, while using a deployed
 version of the other applications. This makes for an awesome developer experience where you can boot up just one
 microfrontend at a time, not even having to clone, npm install, or boot up all of the other ones.
@@ -30,8 +32,6 @@ Now go to http://coexisting-angular-microfrontends.surge.sh in a browser. Click 
 reload the page on coexisting-angular-microfrontends.surge.sh. See https://github.com/joeldenning/import-map-overrides for more info on this.
 
 ## Local development -- all at once
-[Tutorial video]([Tutorial video](https://www.youtube.com/watch?v=vjjcuIxqIzY&list=PLLUD8RtHvsAOhtHnyGx57EYXoaNsxGrTU&index=4)
-
 It is preferred to only run one app at a time. But if you need to run them all locally, you can do so with the following instructions
 
 ```sh
