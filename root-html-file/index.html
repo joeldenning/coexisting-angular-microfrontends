@@ -13,7 +13,8 @@
           "app1": "http://localhost:4201/main.js",
           "app2": "http://localhost:4202/main.js",
           "navbar": "http://localhost:4300/main.js",
-          "single-spa": "https://cdnjs.cloudflare.com/ajax/libs/single-spa/5.5.0/system/single-spa.min.js"
+          "single-spa": "https://cdnjs.cloudflare.com/ajax/libs/single-spa/5.5.0/system/single-spa.min.js",
+          "single-spa-layout": "https://unpkg.com/single-spa-layout@1.0.0-beta.2/dist/system/single-spa-layout.min.js"
         }
       }
     </script>
@@ -27,40 +28,36 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/4.0.0/extras/named-register.min.js"></script>
   </head>
   <body>
+    <single-spa-router style="display: none">
+      <nav class="topnav">
+        <application name="navbar"></application>
+      </nav>
+      <div class="main-content">
+        <route path="app1">
+          <application name="app1"></application>
+        </route>
+        <route path="app2">
+          <application name="app2"></application>
+        </route>
+      </div>
+    </single-spa-router>
     <script>
-      System.import('single-spa').then(function (singleSpa) {
-        singleSpa.registerApplication(
-          'navbar',
-          function () {
-            return System.import('navbar');
-          },
-          function (location) {
-            return true;
-          }
-        )
+      Promise.all([System.import('single-spa'), System.import('single-spa-layout')]).then(([singleSpa, singleSpaLayout]) => {
+        const { constructApplications, constructLayoutEngine, constructRoutes } = singleSpaLayout;
+        const { registerApplication, start } = singleSpa;
 
-        singleSpa.registerApplication(
-          'app1',
-          function () {
-            return System.import('app1');
+        const routes = constructRoutes(document.querySelector('single-spa-router'));
+        const applications = constructApplications({
+          routes,
+          loadApp({ name }) {
+            return System.import(name);
           },
-          function (location) {
-            return location.pathname.startsWith('/app1');
-          }
-        );
+        });
+        const layoutEngine = constructLayoutEngine({ routes, applications });
+        applications.forEach(registerApplication);
 
-        singleSpa.registerApplication(
-          'app2',
-          function () {
-            return System.import('app2');
-          },
-          function (location) {
-            return location.pathname.startsWith('/app2');
-          }
-        )
-
-        singleSpa.start();
-      })
+        start();
+      });
     </script>
     <import-map-overrides-full></import-map-overrides-full>
   </body>
