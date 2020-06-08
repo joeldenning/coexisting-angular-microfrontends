@@ -26,27 +26,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/4.0.0/extras/amd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/4.0.0/extras/named-exports.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/4.0.0/extras/named-register.min.js"></script>
+    <template id="single-spa-layout">
+      <single-spa-router>
+        <nav class="topnav">
+          <application name="navbar"></application>
+        </nav>
+        <div class="main-content">
+          <route path="app1">
+            <application name="app1"></application>
+          </route>
+          <route path="app2">
+            <application name="app2"></application>
+          </route>
+        </div>
+      </single-spa-router>
+    </template>
   </head>
   <body>
-    <single-spa-router style="display: none">
-      <nav class="topnav">
-        <application name="navbar"></application>
-      </nav>
-      <div class="main-content">
-        <route path="app1">
-          <application name="app1"></application>
-        </route>
-        <route path="app2">
-          <application name="app2"></application>
-        </route>
-      </div>
-    </single-spa-router>
     <script>
       Promise.all([System.import('single-spa'), System.import('single-spa-layout')]).then(([singleSpa, singleSpaLayout]) => {
         const { constructApplications, constructLayoutEngine, constructRoutes } = singleSpaLayout;
         const { registerApplication, start } = singleSpa;
 
-        const routes = constructRoutes(document.querySelector('single-spa-router'));
+        const routes = constructRoutes(document.querySelector('#single-spa-layout'));
         const applications = constructApplications({
           routes,
           loadApp({ name }) {
