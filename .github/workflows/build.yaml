@@ -1,0 +1,43 @@
+name: Microfrontend Build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'
+
+    - name: Install Dependencies and Build root-html-file
+      run: |
+        cd root-html-file
+        npm install
+        npm run build
+
+    - name: Install Dependencies and Build app1
+      run: |
+        cd app1
+        npm install
+        npm run build
+
+    - name: Install Dependencies and Build app2
+      run: |
+        cd app2
+        npm install
+        npm run build
+
+    - name: Install Dependencies and Build navbar
+      run: |
+        cd navbar
+        npm install
+        npm run build
