@@ -23,6 +23,12 @@ jobs:
       with:
         node-version: '20'
 
+    - name: set npm timeout
+      run: npm config set timeout 6000000
+        
+    - name: install pnpm
+      run: npm install -g pnpm
+
     - name: Install Dependencies and Build root-html-file
       run: |
         cd root-html-file
@@ -73,6 +79,12 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: '20'
+        
+    - name: set npm timeout
+      run: npm config set timeout 6000000
+        
+    - name: install pnpm
+      run: npm install -g pnpm
 
     - name: Install Dependencies and Build app1
       run: |
@@ -96,6 +108,12 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: '20'
+        
+    - name: set npm timeout
+      run: npm config set timeout 6000000
+        
+    - name: install pnpm
+      run: npm install -g pnpm
 
     - name: Install Dependencies and Build app2
       run: |
@@ -119,6 +137,12 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: '20'
+        
+    - name: set npm timeout
+      run: npm config set timeout 6000000
+        
+    - name: install pnpm
+      run: npm install -g pnpm
 
     - name: Install Dependencies and Build navbar
       run: |
