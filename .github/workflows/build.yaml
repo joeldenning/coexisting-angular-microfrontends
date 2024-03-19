@@ -24,8 +24,8 @@ jobs:
         node-version: '20'
 
     - name: set npm timeout
-      run: npm config set timeout 6000000
-        
+      run: npm config set fetch-timeout 60000
+      
     - name: install pnpm
       run: npm install -g pnpm
 
@@ -33,41 +33,7 @@ jobs:
       run: |
         cd root-html-file
         npm install
-
-    # - name: Install Dependencies and Build app1
-    #   run: |
-    #     cd app1
-    #     npm install
-    #     npm run build
-    #     npm run build
-
-    # - name: Install Dependencies and Build app2
-    #   run: |
-    #     cd app2
-    #     npm install
-    #     npm run build
-
-    # - name: Install Dependencies and Build navbar
-    #   run: |
-    #     cd navbar
-    #     npm install
-    #     npm run build
-
-    # - name: Run tests on app1
-    #   run: |
-    #     cd app1
-    #     npm run test
-
-    # - name: Run tests on app2
-    #   run: |
-    #     cd app2
-    #     npm run test
-
-    # - name: Run tests on navbar
-    #   run: |
-    #     cd navbar
-    #     npm run test
-
+        
   build-app1:
     runs-on: ubuntu-latest
 
@@ -81,8 +47,8 @@ jobs:
         node-version: '20'
         
     - name: set npm timeout
-      run: npm config set timeout 6000000
-        
+      run: npm config set fetch-timeout 60000
+
     - name: install pnpm
       run: npm install -g pnpm
 
@@ -110,8 +76,8 @@ jobs:
         node-version: '20'
         
     - name: set npm timeout
-      run: npm config set timeout 6000000
-        
+      run: npm config set fetch-timeout 60000
+
     - name: install pnpm
       run: npm install -g pnpm
 
@@ -139,8 +105,8 @@ jobs:
         node-version: '20'
         
     - name: set npm timeout
-      run: npm config set timeout 6000000
-        
+      run: npm config set fetch-timeout 60000
+
     - name: install pnpm
       run: npm install -g pnpm
 
@@ -154,4 +120,3 @@ jobs:
       run: |
         cd navbar
         pnpm run test
-
