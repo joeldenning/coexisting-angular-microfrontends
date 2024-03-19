@@ -11,7 +11,7 @@ on:
       - release/*
 
 jobs:
-  build:
+  build-root-project:
     runs-on: ubuntu-latest
 
     steps:
@@ -28,12 +28,74 @@ jobs:
         cd root-html-file
         npm install
 
+    # - name: Install Dependencies and Build app1
+    #   run: |
+    #     cd app1
+    #     npm install
+    #     npm run build
+    #     npm run build
+
+    # - name: Install Dependencies and Build app2
+    #   run: |
+    #     cd app2
+    #     npm install
+    #     npm run build
+
+    # - name: Install Dependencies and Build navbar
+    #   run: |
+    #     cd navbar
+    #     npm install
+    #     npm run build
+
+    # - name: Run tests on app1
+    #   run: |
+    #     cd app1
+    #     npm run test
+
+    # - name: Run tests on app2
+    #   run: |
+    #     cd app2
+    #     npm run test
+
+    # - name: Run tests on navbar
+    #   run: |
+    #     cd navbar
+    #     npm run test
+
+  build-app1:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'
+
     - name: Install Dependencies and Build app1
       run: |
         cd app1
         npm install
         npm run build
-        npm run build
+
+    - name: Test app1
+      run: |
+        cd app1
+        npm run test
+
+  build-app2:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'
 
     - name: Install Dependencies and Build app2
       run: |
@@ -41,23 +103,33 @@ jobs:
         npm install
         npm run build
 
+    - name: Test app2
+      run: |
+        cd app2
+        npm run test
+
+        npm run test
+
+  build-navbar:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'
+
     - name: Install Dependencies and Build navbar
       run: |
         cd navbar
         npm install
         npm run build
 
-    - name: Run tests on app1
-      run: |
-        cd app1
-        npm run test
-
-    - name: Run tests on app2
-      run: |
-        cd app2
-        npm run test
-
-    - name: Run tests on navbar
+    - name: Test navbar
       run: |
         cd navbar
         npm run test
+
