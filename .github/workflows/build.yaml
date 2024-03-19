@@ -77,13 +77,13 @@ jobs:
     - name: Install Dependencies and Build app1
       run: |
         cd app1
-        npm install
-        npm run build
+        pnpm install
+        pnpm run build
 
     - name: Test app1
       run: |
         cd app1
-        npm run test
+        pnpm run test
 
   build-app2:
     runs-on: ubuntu-latest
@@ -100,15 +100,13 @@ jobs:
     - name: Install Dependencies and Build app2
       run: |
         cd app2
-        npm install
-        npm run build
+        pnpm install
+        pnpm run build
 
     - name: Test app2
       run: |
         cd app2
-        npm run test
-
-        npm run test
+        pnpm run test
 
   build-navbar:
     runs-on: ubuntu-latest
@@ -125,11 +123,11 @@ jobs:
     - name: Install Dependencies and Build navbar
       run: |
         cd navbar
-        npm install
-        npm run build
+        pnpm install
+        pnpm run build
 
     - name: Test navbar
       run: |
         cd navbar
-        npm run test
+        pnpm run test
 
