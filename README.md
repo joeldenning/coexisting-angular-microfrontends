@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/joeldenning/coexisting-angular-microfrontends.svg?branch=master)](https://travis-ci.org/joeldenning/coexisting-angular-microfrontends)
+[![Microfrontend Build](https://github.com/romdj/coexisting-angular-microfrontends/actions/workflows/build.yaml/badge.svg)](https://github.com/romdj/coexisting-angular-microfrontends/actions/workflows/build.yaml)
 
 # Coexisting Angular Microfrontends
 Demo: http://coexisting-angular-microfrontends.surge.sh
