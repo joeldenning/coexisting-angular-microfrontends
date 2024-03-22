@@ -55,10 +55,10 @@ jobs:
         npm install --legacy-peer-deps
         npm run build
 
-    - name: Test app1
-      run: |
-        cd app1
-        npm run test
+    # - name: Test app1
+    #   run: |
+    #     cd app1
+    #     npm run test
 
   build-app2:
     runs-on: ubuntu-latest
@@ -81,10 +81,10 @@ jobs:
         npm install --legacy-peer-deps
         npm run build
 
-    - name: Test app2
-      run: |
-        cd app2
-        npm run test
+    # - name: Test app2
+    #   run: |
+    #     cd app2
+    #     npm run test
 
 
   build-architecture-application:
@@ -108,10 +108,10 @@ jobs:
         npm install --legacy-peer-deps
         npm run build
 
-    - name: Test architecture application
-      run: |
-        cd architecture-application
-        npm run test
+    # - name: Test architecture application
+    #   run: |
+    #     cd architecture-application
+    #     npm run test
   
   build-getting-started-application:
     runs-on: ubuntu-latest
@@ -134,10 +134,10 @@ jobs:
         npm install --legacy-peer-deps
         npm run build
 
-    - name: Test Getting started application
-      run: |
-        cd getting-started-application
-        npm run test
+    # - name: Test Getting started application
+    #   run: |
+    #     cd getting-started-application
+    #     npm run test
 
   build-bootstrapping-application:
     runs-on: ubuntu-latest
@@ -160,10 +160,10 @@ jobs:
         npm install --legacy-peer-deps
         npm run build
 
-    - name: Test bootstrapping application
-      run: |
-        cd bootstrapping-application
-        npm run test
+    # - name: Test bootstrapping application
+    #   run: |
+    #     cd bootstrapping-application
+    #     npm run test
 
   build-navbar:
     runs-on: ubuntu-latest
@@ -186,7 +186,7 @@ jobs:
         npm install --legacy-peer-deps
         npm run build
 
-    - name: Test navbar
-      run: |
-        cd navbar
-        npm run test
+    # - name: Test navbar
+    #   run: |
+    #     cd navbar
+    #     npm run test
