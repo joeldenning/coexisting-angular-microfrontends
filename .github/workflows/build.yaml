@@ -110,7 +110,7 @@ jobs:
 
     - name: Test architecture application
       run: |
-        cd architecture application
+        cd architecture-application
         npm run test
   
   build-getting-started-application:
@@ -136,7 +136,7 @@ jobs:
 
     - name: Test Getting started application
       run: |
-        cd Getting started application
+        cd getting-started-application
         npm run test
 
   build-bootstrapping-application:
@@ -162,7 +162,7 @@ jobs:
 
     - name: Test bootstrapping application
       run: |
-        cd bootstrapping application
+        cd bootstrapping-application
         npm run test
 
   build-navbar:
