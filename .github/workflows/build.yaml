@@ -113,7 +113,7 @@ jobs:
         cd architecture application
         npm run test
   
-build-getting-started-application:
+  build-getting-started-application:
     runs-on: ubuntu-latest
 
     steps:
@@ -139,7 +139,7 @@ build-getting-started-application:
         cd Getting started application
         npm run test
 
-build-bootstrapping-application:
+  build-bootstrapping-application:
     runs-on: ubuntu-latest
 
     steps:
