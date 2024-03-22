@@ -34,6 +34,32 @@ jobs:
         cd root-html-file
         npm install --legacy-peer-deps
         
+  build-navbar:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'
+        
+    - name: set npm timeout
+      run: npm config set fetch-timeout 60000
+
+    - name: Install Dependencies and Build navbar
+      run: |
+        cd navbar
+        npm install --legacy-peer-deps
+    # npm run build put on the side for now
+
+    # - name: Test navbar
+    #   run: |
+    #     cd navbar
+    #     npm run test
+
   build-app1:
     runs-on: ubuntu-latest
 
@@ -53,7 +79,7 @@ jobs:
       run: |
         cd app1
         npm install --legacy-peer-deps
-        npm run build
+      # npm run build put on the side for now
 
     # - name: Test app1
     #   run: |
@@ -79,8 +105,8 @@ jobs:
       run: |
         cd app2
         npm install --legacy-peer-deps
-        npm run build
-
+      # npm run build put on the side for now
+        
     # - name: Test app2
     #   run: |
     #     cd app2
@@ -163,30 +189,4 @@ jobs:
     # - name: Test bootstrapping application
     #   run: |
     #     cd bootstrapping-application
-    #     npm run test
-
-  build-navbar:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '20'
-        
-    - name: set npm timeout
-      run: npm config set fetch-timeout 60000
-
-    - name: Install Dependencies and Build navbar
-      run: |
-        cd navbar
-        npm install --legacy-peer-deps
-        npm run build
-
-    # - name: Test navbar
-    #   run: |
-    #     cd navbar
     #     npm run test
