@@ -104,7 +104,7 @@ jobs:
 
     - name: Install Dependencies and Build architecture application
       run: |
-        cd architecture application
+        cd architecture-application
         npm install --legacy-peer-deps
         npm run build
 
@@ -130,7 +130,7 @@ jobs:
 
     - name: Install Dependencies and Build Getting started application
       run: |
-        cd Getting started application
+        cd getting-started-application
         npm install --legacy-peer-deps
         npm run build
 
@@ -156,7 +156,7 @@ jobs:
 
     - name: Install Dependencies and Build bootstrapping application
       run: |
-        cd bootstrapping application
+        cd bootstrapping-application
         npm install --legacy-peer-deps
         npm run build
 
