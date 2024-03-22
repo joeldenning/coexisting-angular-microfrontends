@@ -4,7 +4,10 @@ on:
   push:
     branches:
       - main
+      - staging
+      - dev*
       - release/*
+      - feature/*
   pull_request:
     branches:
       - main
@@ -26,13 +29,10 @@ jobs:
     - name: set npm timeout
       run: npm config set fetch-timeout 60000
       
-    - name: install pnpm
-      run: npm install -g pnpm
-
     - name: Install Dependencies and Build root-html-file
       run: |
         cd root-html-file
-        npm install
+        npm install --legacy-peer-deps
         
   build-app1:
     runs-on: ubuntu-latest
@@ -49,19 +49,16 @@ jobs:
     - name: set npm timeout
       run: npm config set fetch-timeout 60000
 
-    - name: install pnpm
-      run: npm install -g pnpm
-
     - name: Install Dependencies and Build app1
       run: |
         cd app1
-        pnpm install
-        pnpm run build
+        npm install --legacy-peer-deps
+        npm run build
 
     - name: Test app1
       run: |
         cd app1
-        pnpm run test
+        npm run test
 
   build-app2:
     runs-on: ubuntu-latest
@@ -78,19 +75,95 @@ jobs:
     - name: set npm timeout
       run: npm config set fetch-timeout 60000
 
-    - name: install pnpm
-      run: npm install -g pnpm
-
     - name: Install Dependencies and Build app2
       run: |
         cd app2
-        pnpm install
-        pnpm run build
+        npm install --legacy-peer-deps
+        npm run build
 
     - name: Test app2
       run: |
         cd app2
-        pnpm run test
+        npm run test
+
+
+  build-architecture-application:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'
+        
+    - name: set npm timeout
+      run: npm config set fetch-timeout 60000
+
+    - name: Install Dependencies and Build architecture application
+      run: |
+        cd architecture application
+        npm install --legacy-peer-deps
+        npm run build
+
+    - name: Test architecture application
+      run: |
+        cd architecture application
+        npm run test
+  
+build-getting-started-application:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'
+        
+    - name: set npm timeout
+      run: npm config set fetch-timeout 60000
+
+    - name: Install Dependencies and Build Getting started application
+      run: |
+        cd Getting started application
+        npm install --legacy-peer-deps
+        npm run build
+
+    - name: Test Getting started application
+      run: |
+        cd Getting started application
+        npm run test
+
+build-bootstrapping-application:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'
+        
+    - name: set npm timeout
+      run: npm config set fetch-timeout 60000
+
+    - name: Install Dependencies and Build bootstrapping application
+      run: |
+        cd bootstrapping application
+        npm install --legacy-peer-deps
+        npm run build
+
+    - name: Test bootstrapping application
+      run: |
+        cd bootstrapping application
+        npm run test
 
   build-navbar:
     runs-on: ubuntu-latest
@@ -107,16 +180,13 @@ jobs:
     - name: set npm timeout
       run: npm config set fetch-timeout 60000
 
-    - name: install pnpm
-      run: npm install -g pnpm
-
     - name: Install Dependencies and Build navbar
       run: |
         cd navbar
-        pnpm install
-        pnpm run build
+        npm install --legacy-peer-deps
+        npm run build
 
     - name: Test navbar
       run: |
         cd navbar
-        pnpm run test
+        npm run test

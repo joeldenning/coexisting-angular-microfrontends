@@ -3,11 +3,13 @@
   "description": "The single-spa root config for coexisting-angular-microfrontends",
   "main": "index.js",
   "scripts": {
-    "start": "serve -s -l 4200"
+    "start": "serve -s -l 4200",
+    "clean": "rimraf node_modules dist build ./*/node_modules ./*/dist ./*/build"
   },
   "author": "Joel Denning",
   "license": "MIT",
   "devDependencies": {
+    "rimraf": "^5.0.5",
     "serve": "^14.2.1"
   }
 }

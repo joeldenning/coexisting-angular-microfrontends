@@ -3,13 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm run serve:single-spa",
+    "start": "npm run serve:single-spa --port 4222",
     "build": "npm run build:single-spa",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:single-spa": "ng build --prod --deploy-url /dist/app2 --output-hashing none",
-    "serve:single-spa": "ng serve --disable-host-check --port 4202 --deploy-url http://localhost:4202/ --live-reload false"
+    "serve:single-spa": "ng serve --disable-host-check --port 4202 --deploy-url http://localhost:4322/ --live-reload false"
   },
   "private": true,
   "dependencies": {
