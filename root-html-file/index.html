@@ -7,11 +7,14 @@
     <title>Your application</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="importmap-type" content="systemjs-importmap">
+    <!-- "app1": "http://localhost:4201/main.js",
+      "app2": "http://localhost:4202/main.js", -->
     <script type="systemjs-importmap">
       {
         "imports": {
-          "app1": "http://localhost:4201/main.js",
-          "app2": "http://localhost:4202/main.js",
+          "architecture-application": "http://localhost:4210/main.js",
+          "getting-started-application": "http://localhost:4211/main.js",
+          "bootstrapping-application": "http://localhost:4212/main.js",
           "navbar": "http://localhost:4300/main.js",
           "single-spa": "https://cdnjs.cloudflare.com/ajax/libs/single-spa/5.5.0/system/single-spa.min.js",
           "single-spa-layout": "https://unpkg.com/single-spa-layout@1.0.0-beta.2/dist/system/single-spa-layout.min.js"
@@ -21,7 +24,7 @@
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/single-spa/5.5.0/system/single-spa.min.js" as="script" crossorigin="anonymous" />
     <script src='https://unpkg.com/core-js-bundle@3.1.4/minified.js'></script>
     <script src="https://unpkg.com/zone.js@0.10.3/dist/zone.js"></script>
-    <script src="https://unpkg.com/import-map-overrides@1.15.1/dist/import-map-overrides.js"></script>
+    <script src="https://unpkg.com/import-map-overrides@3.1.1/dist/import-map-overrides.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/4.0.0/system.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/4.0.0/extras/amd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/4.0.0/extras/named-exports.js"></script>
@@ -32,11 +35,20 @@
           <application name="navbar"></application>
         </nav>
         <div class="main-content">
-          <route path="app1">
+          <!-- <route path="app1">
             <application name="app1"></application>
           </route>
           <route path="app2">
             <application name="app2"></application>
+          </route> -->
+          <route path="bootstrapping-application">
+            <application name="bootstrapping-application"></application>
+          </route>
+          <route path="architecture-application">
+            <application name="architecture-application"></application>
+          </route>
+          <route path="getting-started-application">
+            <application name="getting-started-application"></application>
           </route>
         </div>
       </single-spa-router>
